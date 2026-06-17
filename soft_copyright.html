@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Nexus AI创作社区平台 - 软件著作权登记文件</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; padding: 0; font-family: "Noto Serif SC", Georgia, serif; font-size: 11pt; line-height: 1.8; color: #333; text-align: justify; text-align-last: left; }
+@page { size: A4; margin: 2.5cm 2cm; @top-center { content: string(doctitle); font-size: 9pt; color: #666; } @bottom-center { content: counter(page); font-size: 9pt; } }
+@page :first { margin: 0; @top-center { content: none; } @bottom-center { content: none; } }
+@page cover { @top-center { content: none; } @bottom-center { content: none; } }
+@page toc { @top-center { content: none; } @bottom-center { content: none; } }
+body { string-set: doctitle ""; }
+h1 { string-set: doctitle content(); }
+
+.cover { page: cover; width: 210mm; height: 297mm; margin: 0; position: relative; overflow: hidden; page-break-after: always; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #16213e 70%, #0f3460 100%); }
+.cover::before { content: ''; position: absolute; top: -50%; right: -30%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%); border-radius: 50%; }
+.cover::after { content: ''; position: absolute; bottom: -30%; left: -20%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(217,119,87,0.12) 0%, transparent 70%); border-radius: 50%; }
+.cover-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 80%; z-index: 1; }
+.cover-badge { display: inline-block; padding: 8px 24px; border: 1px solid rgba(34,197,94,0.5); border-radius: 20px; color: #22c55e; font-size: 10pt; letter-spacing: 2px; margin-bottom: 2cm; }
+.cover-title { font-size: 26pt; font-weight: 700; color: #f5f5f5; margin-bottom: 0.8cm; letter-spacing: 1px; }
+.cover-subtitle { font-size: 14pt; color: #a3a3a3; margin-bottom: 3cm; font-weight: 400; }
+.cover-meta { font-size: 11pt; color: #737373; line-height: 2.2; }
+.cover-meta strong { color: #a3a3a3; }
+.cover-line { width: 60px; height: 2px; background: linear-gradient(90deg, #22c55e, #8b5cf6); margin: 1.5cm auto; }
+
+.toc-page { page: toc; page-break-after: always; }
+.toc-title { font-size: 18pt; font-weight: 700; text-align: center; margin-bottom: 1.5cm; color: #333; }
+.toc { list-style: none; padding: 0; margin: 0; }
+.toc li { margin: 0.4em 0; }
+.toc a { color: #333; text-decoration: none; display: flex; }
+.toc a::after { content: leader('.') target-counter(attr(href url), page); flex-shrink: 0; }
+.toc .toc-h1 { font-weight: 700; font-size: 12pt; margin-top: 0.8em; }
+.toc .toc-h2 { padding-left: 1.5em; font-size: 11pt; }
+
+h1 { font-size: 18pt; font-weight: 700; color: #1a1a2e; margin-top: 1.5cm; margin-bottom: 0.8cm; page-break-after: avoid; border-bottom: 2px solid #22c55e; padding-bottom: 0.3cm; }
+h2 { font-size: 14pt; font-weight: 700; color: #333; margin-top: 1cm; margin-bottom: 0.5cm; page-break-after: avoid; border-left: 4px solid #d97757; padding-left: 0.5cm; }
+h3 { font-size: 12pt; font-weight: 600; color: #444; margin-top: 0.8cm; margin-bottom: 0.4cm; page-break-after: avoid; }
+
+p { margin: 0.5em 0; orphans: 2; widows: 2; }
+
+.key-box { border-left: 4px solid #22c55e; padding: 1em 1.2em; margin: 1em 0; background: #f4fdf6; page-break-inside: avoid; }
+.key-box-title { font-weight: 700; color: #16a34a; margin-bottom: 0.5em; }
+
+.warning-box { border-left: 4px solid #d97757; padding: 1em 1.2em; margin: 1em 0; background: #fef7f4; page-break-inside: avoid; }
+.warning-title { font-weight: 700; color: #d97757; margin-bottom: 0.5em; }
+
+.info-box { border-left: 4px solid #8b5cf6; padding: 1em 1.2em; margin: 1em 0; background: #f8f7fc; page-break-inside: avoid; }
+.info-title { font-weight: 700; color: #8b5cf6; margin-bottom: 0.5em; }
+
+table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 10pt; max-width: 100%; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background: #f5f5f5; font-weight: 600; border-top: 2px solid #333; border-bottom: 2px solid #333; }
+tbody tr:last-child td { border-bottom: 2px solid #333; }
+
+.figure { margin: 1.5em 0; text-align: center; page-break-inside: avoid; }
+.figure img { max-width: 85%; height: auto; }
+figcaption { font-size: 10pt; color: #666; margin-top: 0.5em; }
+
+pre { max-width: 100%; box-sizing: border-box; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; background: #f5f5f5; padding: 1em; font-size: 8.5pt; line-height: 1.5; border-left: 3px solid #22c55e; }
+code { word-break: break-word; font-family: "Courier New", monospace; font-size: 9pt; background: #f0f0f0; padding: 1px 4px; }
+
+a { word-break: break-all; color: #22c55e; text-decoration: none; }
+
+.appendix { page-break-before: always; }
+.appendix h1 { border-bottom-color: #22c55e; }
+</style>
+</head>
+<body>
+
+<!-- ==================== 封面 ==================== -->
+<div class="cover">
+  <div class="cover-content">
+    <div class="cover-badge">SOFTWARE COPYRIGHT</div>
+    <h1 class="cover-title" style="border:none; padding:0; margin-bottom:0.8cm; color:#f5f5f5;">软件著作权登记文件</h1>
+    <div class="cover-line"></div>
+    <p class="cover-subtitle">Nexus AI 创作社区平台 V1.0</p>
+    <p class="cover-subtitle" style="font-size:12pt;">软件说明书 + 源代码说明 + 申请表填写指南</p>
+    <div class="cover-meta">
+      <p><strong>软件全称</strong>　Nexus AI创作社区平台软件[简称：Nexus AI]V1.0</p>
+      <p><strong>开发完成日期</strong>　2026年05月15日</p>
+      <p><strong>首次发表日期</strong>　未发表</p>
+      <p><strong>著作权人</strong>　[申请人名称]</p>
+      <p><strong>权利范围</strong>　全部权利</p>
+      <p style="margin-top:1cm; font-size:9pt; color:#555;">本文档包含商业机密，未经授权不得披露</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 目录 ==================== -->
+<div class="toc-page">
+  <h2 class="toc-title">目　录</h2>
+  <ul class="toc">
+    <li class="toc-h1"><a href="#sec1">第一部分　软件著作权登记概述</a></li>
+    <li class="toc-h2"><a href="#sec1-1">一、登记流程与时间节点</a></li>
+    <li class="toc-h2"><a href="#sec1-2">二、登记材料清单</a></li>
+    <li class="toc-h1"><a href="#sec2">第二部分　软件说明书</a></li>
+    <li class="toc-h2"><a href="#sec2-1">一、软件概述</a></li>
+    <li class="toc-h2"><a href="#sec2-2">二、系统架构与技术栈</a></li>
+    <li class="toc-h2"><a href="#sec2-3">三、功能模块详细说明</a></li>
+    <li class="toc-h2"><a href="#sec2-4">四、界面截图说明</a></li>
+    <li class="toc-h2"><a href="#sec2-5">五、运行环境</a></li>
+    <li class="toc-h1"><a href="#sec3">第三部分　源代码说明</a></li>
+    <li class="toc-h2"><a href="#sec3-1">一、源代码组织结构</a></li>
+    <li class="toc-h2"><a href="#sec3-2">二、核心代码说明</a></li>
+    <li class="toc-h2"><a href="#sec3-3">三、源代码提交规范</a></li>
+    <li class="toc-h1"><a href="#sec4">第四部分　申请表填写指南</a></li>
+  </ul>
+</div>
+
+<!-- ==================== 第一部分：登记概述 ==================== -->
+<h1 id="sec1">第一部分　软件著作权登记概述</h1>
+
+<h2 id="sec1-1">一、登记流程与时间节点</h2>
+
+<p>根据中国版权保护中心2025年最新规定，软件著作权登记采取电子化申报，全流程线上操作。以下是本软件的登记流程与预计时间节点：</p>
+
+<table>
+<thead>
+<tr><th>阶段</th><th>事项</th><th>预计时间</th><th>状态</th></tr>
+</thead>
+<tbody>
+<tr><td>阶段一</td><td>准备登记材料（说明书+源代码）</td><td>1-2周</td><td>进行中</td></tr>
+<tr><td>阶段二</td><td>中国版权保护中心官网注册账号并完成实名认证</td><td>3个工作日</td><td>待办理</td></tr>
+<tr><td>阶段三</td><td>在线填写申请表并上传材料</td><td>1个工作日</td><td>待办理</td></tr>
+<tr><td>阶段四</td><td>缴纳登记费用（官费270元/件）</td><td>申请提交后15日内</td><td>待办理</td></tr>
+<tr><td>阶段五</td><td>受理审查（形式审查）</td><td>5-7个工作日</td><td>待受理</td></tr>
+<tr><td>阶段六</td><td>实质审查</td><td>30-40个工作日</td><td>待审查</td></tr>
+<tr><td>阶段七</td><td>发放电子证书</td><td>审查通过后5个工作日</td><td>待发放</td></tr>
+<tr><td><strong>合计</strong></td><td>-</td><td><strong>约45-60个工作日</strong></td><td>-</td></tr>
+</tbody>
+</table>
+
+<h2 id="sec1-2">二、登记材料清单</h2>
+
+<table>
+<thead>
+<tr><th>材料名称</th><th>格式要求</th><th>页数要求</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>软件著作权申请表</td><td>在线填写后自动生成PDF</td><td>-</td><td>官网注册后在线填报</td></tr>
+<tr><td>软件说明书</td><td>PDF格式，A4纸</td><td>不少于15页</td><td>本文档第二部分</td></tr>
+<tr><td>软件源代码</td><td>PDF格式，每页不少于50行</td><td>前后各30页（共60页）</td><td>本文档第三部分</td></tr>
+<tr><td>身份证明文件</td><td>企业：营业执照副本扫描件</td><td>-</td><td>加盖公章</td></tr>
+<tr><td>联系人身份证明</td><td>身份证正反面扫描件</td><td>-</td><td>用于实名认证</td></tr>
+<tr><td>权利归属说明</td><td>如有委托/合作开发需提供</td><td>-</td><td>本软件为独立开发，无需此项</td></tr>
+</tbody>
+</table>
+
+<div class="warning-box">
+<div class="warning-title">重要注意事项</div>
+<p>1. <strong>源代码提交规范</strong>：源代码需连续60页（前30页+后30页），每页不少于50行。删除所有空行和注释行。代码总行数不足60页时提交全部代码。源代码中不得包含加密或混淆代码。</p>
+<p>2. <strong>版本管理</strong>：软件名称后必须加版本号（如V1.0），后续版本更新需重新登记。</p>
+<p>3. <strong>发表状态</strong>：本软件尚未发表，首次发表日期留空。若已上线，必须如实填写首次发表日期。</p>
+<p>4. <strong>权利范围</strong>：选择"全部权利"。若包含第三方开源库（如React、Tailwind CSS），需在权利范围中明确排除相关模块的权利主张。</p>
+</div>
+
+<!-- ==================== 第二部分：软件说明书 ==================== -->
+<h1 id="sec2">第二部分　软件说明书</h1>
+
+<h2 id="sec2-1">一、软件概述</h2>
+
+<h3>1.1 软件基本信息</h3>
+
+<table>
+<thead>
+<tr><th>项目</th><th>内容</th></tr>
+</thead>
+<tbody>
+<tr><td>软件全称</td><td>Nexus AI创作社区平台软件</td></tr>
+<tr><td>软件简称</td><td>Nexus AI</td></tr>
+<tr><td>版本号</td><td>V1.0</td></tr>
+<tr><td>开发方式</td><td>独立开发</td></tr>
+<tr><td>开发完成日期</td><td>2026年05月15日</td></tr>
+<tr><td>首次发表日期</td><td>未发表</td></tr>
+<tr><td>著作权人</td><td>[申请人名称]</td></tr>
+<tr><td>软件用途</td><td>AI辅助创作、内容管理、社交协同</td></tr>
+<tr><td>技术特点</td><td>多模态AI交互、实时状态可视化、异构消息嵌入、双列瀑布流、统一数字身份</td></tr>
+<tr><td>硬件环境</td><td>支持Web浏览器的终端设备（PC/平板/手机）</td></tr>
+<tr><td>软件环境</td><td>现代浏览器（Chrome 90+/Firefox 88+/Safari 14+/Edge 90+）</td></tr>
+<tr><td>编程语言</td><td>TypeScript、HTML5、CSS3</td></tr>
+<tr><td>主要技术框架</td><td>React 19、Vite 7、Tailwind CSS 3.4、shadcn/ui、Framer Motion</td></tr>
+<tr><td>代码总行数</td><td>约15,000行（TypeScript/TSX）</td></tr>
+</tbody>
+</table>
+
+<h3>1.2 软件简介</h3>
+
+<p>Nexus AI创作社区平台（以下简称"本软件"）是一款面向AI时代创作者的多模态社交协同Web应用。本软件将AI辅助创作、便签记录、内容社区、即时通讯和个人身份展示五大功能模块有机融合，打造了一个"AI创作+内容记录+社交分发+即时通讯"四位一体的创作协同平台。</p>
+
+<p>本软件的核心创新在于：将AI服务器的实时运行状态以可视化方式嵌入用户的内容信息流中，采用折叠式AI交互抽屉实现AI能力与创作场景的空间融合，支持将来自微信、论坛、邮件等异构平台的消息嵌入富文本编辑器中进行二次编辑，在双列瀑布流内容发现界面中集成一键复刻创作功能，并将AI虚拟形象、个人动态流和创作作品集整合为统一的数字身份展示。</p>
+
+<h3>1.3 软件主要功能</h3>
+
+<table>
+<thead>
+<tr><th>功能模块</th><th>主要功能</th><th>功能说明</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="4">便签首页</td><td>无限滚动便签流</td><td>支持分类筛选的便签卡片瀑布流</td></tr>
+<tr><td>实时服务器状态栏</td><td>展示AI智能体数量、任务状态、网络延迟</td></tr>
+<tr><td>AI头像折叠抽屉</td><td>可折叠展开的AI交互入口</td></tr>
+<tr><td>便签创建与编辑</td><td>支持富文本编辑的便签创建</td></tr>
+<tr><td rowspan="4">AI对话</td><td>多轮对话</td><td>支持Markdown渲染的AI对话</td></tr>
+<tr><td>代码块高亮</td><td>语法高亮、一键复制、代码展开</td></tr>
+<tr><td>消息转发嵌入</td><td>支持微信/论坛消息嵌入编辑</td></tr>
+<tr><td>富文本输入</td><td>支持格式化工具栏的输入框</td></tr>
+<tr><td rowspan="3">论坛发现</td><td>双列瀑布流</td><td>CSS columns实现的双列作品展示</td></tr>
+<tr><td>作品互动</td><td>点赞、收藏、评论、一键复刻</td></tr>
+<tr><td>嵌套评论</td><td>支持多层嵌套的评论系统</td></tr>
+<tr><td rowspan="3">即时通讯</td><td>好友状态</td><td>故事状态环、在线指示</td></tr>
+<tr><td>会话管理</td><td>会话列表、未读标记、消息搜索</td></tr>
+<tr><td>富媒体消息</td><td>文本、图片、语音、转发消息</td></tr>
+<tr><td rowspan="3">个人主页</td><td>QQ秀虚拟形象</td><td>3D虚拟形象展示与交互</td></tr>
+<tr><td>个人动态流</td><td>时间轴形式的动态展示</td></tr>
+<tr><td>作品集画廊</td><td>网格布局的作品展示</td></tr>
+</tbody>
+</table>
+
+<h2 id="sec2-2">二、系统架构与技术栈</h2>
+
+<h3>2.1 系统架构</h3>
+
+<p>本软件采用前后端分离的单页应用（SPA）架构，前端基于React 19 + TypeScript构建，通过Vite进行项目构建和打包。系统架构分为以下层次：</p>
+
+<p><strong>（1）视图层（Presentation Layer）</strong>：负责用户界面的渲染和交互处理。采用React函数组件+Hooks模式，使用Tailwind CSS进行样式管理，shadcn/ui提供基础UI组件库，Framer Motion实现交互动画，Lucide React提供图标系统。</p>
+
+<p><strong>（2）状态管理层（State Management Layer）</strong>：负责组件间状态共享和全局状态管理。采用Zustand作为全局状态管理库，React Context用于跨组件数据传递，useState和useReducer管理局部组件状态。</p>
+
+<p><strong>（3）数据服务层（Data Service Layer）</strong>：负责与后端API通信和本地数据管理。采用Fetch API进行HTTP请求，WebSocket实现实时通信，localStorage进行本地数据持久化。</p>
+
+<p><strong>（4）工具层（Utility Layer）</strong>：提供通用工具函数和自定义Hooks。包括日期格式化、字符串处理、防抖节流、IntersectionObserver封装、动画工具等。</p>
+
+<h3>2.2 技术栈详情</h3>
+
+<table>
+<thead>
+<tr><th>类别</th><th>技术/框架</th><th>版本</th><th>用途</th></tr>
+</thead>
+<tbody>
+<tr><td>核心框架</td><td>React</td><td>19.x</td><td>UI组件框架</td></tr>
+<tr><td>编程语言</td><td>TypeScript</td><td>5.x</td><td>类型安全开发</td></tr>
+<tr><td>构建工具</td><td>Vite</td><td>7.x</td><td>项目构建与热更新</td></tr>
+<tr><td>样式方案</td><td>Tailwind CSS</td><td>3.4.x</td><td>原子化CSS框架</td></tr>
+<tr><td>UI组件库</td><td>shadcn/ui</td><td>-</td><td>基础UI组件</td></tr>
+<tr><td>动画库</td><td>Framer Motion</td><td>11.x</td><td>组件动画与手势</td></tr>
+<tr><td>路由</td><td>React Router</td><td>7.x</td><td>客户端路由管理</td></tr>
+<tr><td>状态管理</td><td>Zustand</td><td>5.x</td><td>全局状态管理</td></tr>
+<tr><td>图标库</td><td>Lucide React</td><td>0.x</td><td>矢量图标系统</td></tr>
+<tr><td>Markdown渲染</td><td>react-markdown-preview</td><td>5.x</td><td>Markdown内容渲染</td></tr>
+<tr><td>代码高亮</td><td>react-syntax-highlighter</td><td>15.x</td><td>代码块语法高亮</td></tr>
+<tr><td>日期处理</td><td>date-fns</td><td>4.x</td><td>日期格式化</td></tr>
+</tbody>
+</table>
+
+<h3>2.3 项目目录结构</h3>
+
+<pre>
+nexus-ai/
+├── public/                     # 静态资源
+│   ├── ai-avatar.png
+│   ├── note-cover-*.png
+│   ├── forum-work-*.png
+│   ├── profile-work-*.png
+│   ├── qq-show-avatar.png
+│   ├── user-avatar-default.png
+│   └── ...
+├── src/
+│   ├── components/             # 组件目录
+│   │   ├── ui/                 # shadcn/ui基础组件
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   └── ...
+│   │   ├── ServerStatusBar.tsx # 服务器状态栏
+│   │   ├── AIAvatarDrawer.tsx  # AI头像折叠抽屉
+│   │   ├── BottomNav.tsx       # 底部导航
+│   │   ├── NoteCard.tsx        # 便签卡片
+│   │   ├── BottomSheet.tsx     # 底部浮层
+│   │   └── ...
+│   ├── pages/                  # 页面组件
+│   │   ├── Home.tsx            # 便签首页
+│   │   ├── Chat.tsx            # AI对话页
+│   │   ├── Forum.tsx           # 论坛发现页
+│   │   ├── Messages.tsx        # 即时通讯页
+│   │   └── Profile.tsx         # 个人主页
+│   ├── hooks/                  # 自定义Hooks
+│   │   └── use-mobile.ts
+│   ├── lib/                    # 工具函数
+│   │   └── utils.ts
+│   ├── types/                  # 类型定义
+│   ├── App.tsx                 # 根组件
+│   ├── main.tsx                # 入口文件
+│   └── index.css               # 全局样式
+├── index.html
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── tailwind.config.js
+</pre>
+
+<h2 id="sec2-3">三、功能模块详细说明</h2>
+
+<h3>3.1 便签首页模块</h3>
+
+<p><strong>功能描述</strong>：便签首页是本软件的默认入口页面，采用流式无限滚动布局展示用户的便签卡片。页面顶部为服务器状态栏，展示AI智能体的在线数量、当前任务状态和网络延迟。状态栏下方为AI头像折叠抽屉，可在折叠态和展开态之间切换。页面主体为便签卡片列表，支持分类筛选、下拉刷新和无限滚动加载。</p>
+
+<p><strong>核心组件</strong>：</p>
+<ul>
+<li><strong>ServerStatusBar</strong>：实时状态可视化组件，通过WebSocket接收服务器推送的状态数据，采用四级信息密度架构（呼吸灯→数字徽章→滚动文字→展开仪表盘）呈现。</li>
+<li><strong>AIAvatarDrawer</strong>：折叠式AI交互组件，采用CSS Grid双态布局，折叠态高度56px展示AI头像和在线状态，展开态高度280px展示AI对话入口和快捷操作。</li>
+<li><strong>NoteCard</strong>：便签卡片组件，支持6种色彩变体，展示分类标签、时间戳、标题、内容摘要、媒体预览和操作按钮。</li>
+<li><strong>BottomNav</strong>：底部导航组件，5个导航项（便签、论坛、AI、消息、我的），中央AI按钮采用珊瑚色圆形设计突出显示。</li>
+</ul>
+
+<p><strong>交互流程</strong>：用户打开应用→状态栏建立WebSocket连接并展示实时状态→展示AI头像抽屉（默认折叠态）→加载便签列表→用户可滚动浏览便签→点击分类标签筛选→点击AI头像展开抽屉→点击FAB按钮新建便签。</p>
+
+<h3>3.2 AI对话模块</h3>
+
+<p><strong>功能描述</strong>：AI对话模块提供与AI助手的多轮对话能力，支持Markdown格式渲染、代码块语法高亮、AI生成图片展示、转发消息嵌入等功能。对话界面采用左右分栏布局，用户消息居右显示，AI消息居左显示。</p>
+
+<p><strong>核心组件</strong>：</p>
+<ul>
+<li><strong>ChatHeader</strong>：对话头部组件，展示AI头像、在线状态和对话标题。</li>
+<li><strong>MessageList</strong>：消息列表组件，自动滚动到最新消息，支持历史消息加载。</li>
+<li><strong>MessageBubble</strong>：消息气泡组件，支持文本、代码块、图片、转发消息等多种类型。</li>
+<li><strong>MarkdownRenderer</strong>：Markdown渲染组件，基于react-markdown-preview实现，支持代码块语法高亮（One Dark主题）。</li>
+<li><strong>ForwardedMessageEmbed</strong>：转发消息嵌入组件，支持微信、论坛、邮件来源的消息卡片嵌入和编辑。</li>
+<li><strong>MessageInput</strong>：消息输入组件，支持富文本格式化工具栏和快捷操作。</li>
+</ul>
+
+<p><strong>交互流程</strong>：用户进入对话页→加载历史消息→用户在输入框输入消息→发送消息→展示打字指示器→AI回复消息→支持代码块复制/展开→支持转发消息查看/编辑/AI润色。</p>
+
+<h3>3.3 论坛发现模块</h3>
+
+<p><strong>功能描述</strong>：论坛发现模块采用双列瀑布流布局展示社区用户的创作作品，支持点赞、收藏、评论和一键复刻功能。评论系统采用Reddit风格的嵌套评论设计，支持多层回复和评论折叠。</p>
+
+<p><strong>核心组件</strong>：</p>
+<ul>
+<li><strong>MasonryFeed</strong>：瀑布流 feed 组件，采用CSS columns: 2实现双列布局，结合IntersectionObserver实现无限滚动。</li>
+<li><strong>WorkCard</strong>：作品卡片组件，展示作品图片、标题、描述、作者信息和互动数据。</li>
+<li><strong>HeartBurst</strong>：点赞动效组件，实现心形粒子爆发动画效果。</li>
+<li><strong>CommentThread</strong>：嵌套评论组件，支持多层嵌套回复和评论折叠/展开。</li>
+<li><strong>CloneSheet</strong>：复刻浮层组件，支持风格参数提取、Prompt编辑和AI生成调用。</li>
+</ul>
+
+<h3>3.4 即时通讯模块</h3>
+
+<p><strong>功能描述</strong>：即时通讯模块提供好友状态展示、会话管理和消息收发功能。好友列表采用横向滚动的故事状态环设计，会话列表支持未读标记和消息类型指示。</p>
+
+<p><strong>核心组件</strong>：</p>
+<ul>
+<li><strong>StatusStoriesRow</strong>：好友状态环组件，横向滚动展示好友头像和在线状态。</li>
+<li><strong>ConversationList</strong>：会话列表组件，展示最近会话、消息预览、未读数量和操作按钮。</li>
+<li><strong>MessageThread</strong>：消息会话组件，支持文本、图片、语音、转发消息等多种消息类型。</li>
+</ul>
+
+<h3>3.5 个人主页模块</h3>
+
+<p><strong>功能描述</strong>：个人主页模块提供QQ秀虚拟形象展示、个人动态流、作品集画廊和设置管理功能。采用标签导航切换不同内容区域。</p>
+
+<p><strong>核心组件</strong>：</p>
+<ul>
+<li><strong>QQShowStage</strong>：虚拟形象展示组件，支持3D形象展示和交互式表情切换。</li>
+<li><strong>PersonalFeed</strong>：个人动态流组件，时间轴形式展示创作动态和AI使用记录。</li>
+<li><strong>WorksGallery</strong>：作品集画廊组件，CSS Grid网格布局展示作品缩略图。</li>
+</ul>
+
+<h2 id="sec2-4">四、界面截图说明</h2>
+
+<p>本软件主要界面包括以下五个核心页面：</p>
+
+<table>
+<thead>
+<tr><th>页面名称</th><th>功能说明</th><th>界面特征</th></tr>
+</thead>
+<tbody>
+<tr><td>便签首页</td><td>流式便签卡片+服务器状态+AI抽屉</td><td>暗色主题，顶部状态栏，折叠AI头像，分类标签栏，便签卡片列表，底部导航</td></tr>
+<tr><td>AI对话页</td><td>AI对话+代码高亮+消息嵌入</td><td>左右分栏消息气泡，Markdown渲染，代码块高亮，转发消息卡片，富文本输入框</td></tr>
+<tr><td>论坛发现页</td><td>双列瀑布流+作品互动</td><td>CSS columns双列布局，作品卡片，点赞/收藏/评论按钮，嵌套评论区</td></tr>
+<tr><td>即时通讯页</td><td>好友状态+会话列表</td><td>横向状态环，会话列表（头像/预览/时间/未读），操作按钮</td></tr>
+<tr><td>个人主页</td><td>虚拟形象+动态+作品集</td><td>QQ秀3D形象，状态卡片，统计数据，标签导航，动态流，作品网格</td></tr>
+</tbody>
+</table>
+
+<h2 id="sec2-5">五、运行环境</h2>
+
+<h3>5.1 硬件环境</h3>
+<ul>
+<li>处理器：支持运行现代Web浏览器的任何处理器</li>
+<li>内存：建议4GB以上</li>
+<li>存储：无需本地存储（纯Web应用）</li>
+<li>网络：需要互联网连接</li>
+<li>显示：支持响应式布局，适配320px-2560px宽度范围</li>
+</ul>
+
+<h3>5.2 软件环境</h3>
+<ul>
+<li>操作系统：Windows 10+、macOS 11+、iOS 14+、Android 10+</li>
+<li>浏览器：Chrome 90+、Firefox 88+、Safari 14+、Edge 90+</li>
+<li>JavaScript引擎：支持ES2020+</li>
+<li>WebSocket：支持RFC 6455</li>
+<li>Web Storage：支持localStorage</li>
+</ul>
+
+<h3>5.3 安装与部署</h3>
+<p>本软件为纯前端Web应用，无需用户安装。通过以下步骤部署：</p>
+<ol>
+<li>运行 npm install 安装项目依赖</li>
+<li>运行 npm run build 构建生产版本</li>
+<li>将dist目录部署到Web服务器（Nginx/Apache/CDN）</li>
+<li>配置域名和SSL证书</li>
+<li>用户通过浏览器访问即可使用</li>
+</ol>
+
+<!-- ==================== 第三部分：源代码说明 ==================== -->
+<div class="appendix">
+<h1 id="sec3">第三部分　源代码说明</h1>
+
+<h2 id="sec3-1">一、源代码组织结构</h2>
+
+<p>本软件源代码采用TypeScript语言编写，使用React框架，总代码量约15,000行。源代码按功能模块组织，主要文件结构如下：</p>
+
+<table>
+<thead>
+<tr><th>目录/文件</th><th>说明</th><th>代码行数（约）</th></tr>
+</thead>
+<tbody>
+<tr><td>src/components/ui/</td><td>shadcn/ui基础组件（Button, Card, Dialog等）</td><td>2,000行</td></tr>
+<tr><td>src/components/chat/</td><td>AI对话模块组件</td><td>2,500行</td></tr>
+<tr><td>src/components/forum/</td><td>论坛发现模块组件</td><td>2,000行</td></tr>
+<tr><td>src/components/messages/</td><td>即时通讯模块组件</td><td>2,000行</td></tr>
+<tr><td>src/components/profile/</td><td>个人主页模块组件</td><td>2,000行</td></tr>
+<tr><td>src/pages/</td><td>页面级组件</td><td>1,500行</td></tr>
+<tr><td>src/hooks/</td><td>自定义Hooks</td><td>200行</td></tr>
+<tr><td>src/lib/</td><td>工具函数</td><td>300行</td></tr>
+<tr><td>src/types/</td><td>TypeScript类型定义</td><td>500行</td></tr>
+<tr><td>src/App.tsx</td><td>根组件</td><td>100行</td></tr>
+<tr><td>src/main.tsx</td><td>应用入口</td><td>50行</td></tr>
+<tr><td>src/index.css</td><td>全局样式</td><td>300行</td></tr>
+<tr><td>其他配置文件</td><td>package.json, tsconfig, vite.config等</td><td>500行</td></tr>
+<tr><td><strong>合计</strong></td><td>-</td><td><strong>约15,000行</strong></td></tr>
+</tbody>
+</table>
+
+<h2 id="sec3-2">二、核心代码说明</h2>
+
+<h3>2.1 服务器状态栏组件（ServerStatusBar.tsx）</h3>
+<p>该组件实现AI服务器实时状态的可视化展示，是便签首页的核心组件之一。组件通过WebSocket接收服务器推送的状态数据，采用增量渲染策略更新UI。</p>
+
+<h3>2.2 AI头像折叠抽屉组件（AIAvatarDrawer.tsx）</h3>
+<p>该组件实现折叠式AI交互抽屉，采用CSS Grid双态布局管理折叠态和展开态，配合Framer Motion实现流畅的状态切换动画。</p>
+
+<h3>2.3 便签卡片组件（NoteCard.tsx）</h3>
+<p>该组件实现便签卡片的渲染和交互，支持6种色彩变体、分类标签、时间戳、内容摘要、媒体预览和互动操作。</p>
+
+<h3>2.4 底部导航组件（BottomNav.tsx）</h3>
+<p>该组件实现底部固定导航栏，包含5个导航项，中央AI按钮采用珊瑚色圆形设计，支持路由切换和活跃状态指示。</p>
+
+<h3>2.5 消息气泡组件（MessageBubble.tsx）</h3>
+<p>该组件实现AI对话页的消息气泡渲染，支持文本、代码块、图片、转发消息等多种消息类型，代码块支持语法高亮和一键复制。</p>
+
+<h3>2.6 转发消息嵌入组件（ForwardedMessageEmbed.tsx）</h3>
+<p>该组件实现异构来源消息的嵌入式渲染，支持微信、论坛、邮件来源的消息卡片嵌入到富文本编辑器中。</p>
+
+<h3>2.7 瀑布流Feed组件（MasonryFeed.tsx）</h3>
+<p>该组件实现双列瀑布流布局，采用CSS columns属性，结合IntersectionObserver实现无限滚动加载。</p>
+
+<h2 id="sec3-3">三、源代码提交规范</h2>
+
+<div class="info-box">
+<div class="info-title">源代码提交要求</div>
+<p>根据中国版权保护中心2025年最新规定，源代码提交需满足以下规范：</p>
+<p>1. <strong>代码范围</strong>：提交源代码的前30页和后30页，共计60页。若代码总行数不足60页（按每页50行计算不足3000行），则提交全部代码。</p>
+<p>2. <strong>格式要求</strong>：源代码文件转换为PDF格式提交，每页不少于50行代码。</p>
+<p>3. <strong>代码清理</strong>：删除所有空行和注释行，保留核心逻辑代码（函数定义、类结构、关键算法）。</p>
+<p>4. <strong>页眉标注</strong>：每页页眉需标注软件名称和版本号（如"Nexus AI V1.0"），页码按1-60编排。</p>
+<p>5. <strong>完整性</strong>：提交的代码片段应能体现软件的整体架构和关键功能，前后各30页应覆盖软件的主要模块。</p>
+</div>
+
+<p><strong>本软件代码提交策略</strong>：</p>
+<p>本软件总代码量约15,000行，远超60页的最低要求（3000行）。按照"前30页+后30页"的策略，前30页覆盖入口文件、全局配置、工具函数和基础组件，后30页覆盖核心页面组件和主要功能模块的关键代码。具体选取如下：</p>
+
+<ul>
+<li><strong>前30页</strong>（按文件顺序）：main.tsx → App.tsx → index.css → utils.ts → use-mobile.ts → ServerStatusBar.tsx → AIAvatarDrawer.tsx → BottomNav.tsx → NoteCard.tsx → BottomSheet.tsx</li>
+<li><strong>后30页</strong>（按文件逆序）：Profile.tsx → Messages.tsx → Forum.tsx → Chat.tsx → MasonryFeed.tsx → ForwardedMessageEmbed.tsx → MessageBubble.tsx → MarkdownRenderer.tsx → Home.tsx</li>
+</ul>
+
+</div>
+
+<!-- ==================== 第四部分：申请表填写指南 ==================== -->
+<div class="appendix">
+<h1 id="sec4">第四部分　申请表填写指南</h1>
+
+<h2>一、申请表各字段填写说明</h2>
+
+<table>
+<thead>
+<tr><th>字段名称</th><th>填写内容</th><th>注意事项</th></tr>
+</thead>
+<tbody>
+<tr><td>软件全称</td><td>Nexus AI创作社区平台软件</td><td>需包含品牌名和功能描述</td></tr>
+<tr><td>软件简称</td><td>Nexus AI</td><td>简短易记的品牌名</td></tr>
+<tr><td>版本号</td><td>V1.0</td><td>必须与软件实际版本一致</td></tr>
+<tr><td>开发完成日期</td><td>2026年05月15日</td><td>需与代码提交记录一致</td></tr>
+<tr><td>首次发表日期</td><td>留空（未发表）</td><td>未发表则不填</td></tr>
+<tr><td>开发方式</td><td>独立开发</td><td>本软件为自主开发</td></tr>
+<tr><td>权利范围</td><td>全部权利</td><td>选择全部权利</td></tr>
+<tr><td>软件用途和技术特点</td><td>参见第二部分"软件概述"</td><td>简要描述用途和5个技术特点</td></tr>
+<tr><td>硬件环境</td><td>支持Web浏览器的终端设备</td><td>PC/平板/手机均可</td></tr>
+<tr><td>软件环境</td><td>现代浏览器（Chrome 90+/Firefox 88+/Safari 14+/Edge 90+）</td><td>列出支持的浏览器及版本</td></tr>
+<tr><td>编程语言</td><td>TypeScript</td><td>主要编程语言</td></tr>
+<tr><td>源程序量</td><td>15,000行</td><td>源代码总行数</td></tr>
+<tr><td>主要功能和技术特点</td><td>参见第二部分"软件主要功能"和"技术特点"</td><td>300字以内概括</td></tr>
+</tbody>
+</table>
+
+<h2>二、著作权人信息</h2>
+
+<table>
+<thead>
+<tr><th>字段名称</th><th>填写内容</th><th>注意事项</th></tr>
+</thead>
+<tbody>
+<tr><td>姓名/名称</td><td>[申请人公司全称]</td><td>与营业执照完全一致</td></tr>
+<tr><td>类别</td><td>企业法人</td><td>选择企业法人</td></tr>
+<tr><td>统一社会信用代码</td><td>[公司统一社会信用代码]</td><td>与营业执照一致</td></tr>
+<tr><td>国籍</td><td>中国</td><td>默认中国</td></tr>
+<tr><td>省份/城市</td><td>[公司注册地省份/城市]</td><td>与营业执照一致</td></tr>
+<tr><td>园区/开发区</td><td>无</td><td>如不属于园区则填无</td></tr>
+<tr><td>地址</td><td>[公司注册地址]</td><td>详细地址</td></tr>
+<tr><td>邮编</td><td>[邮编]</td><td>详细邮编</td></tr>
+<tr><td>联系人</td><td>[联系人姓名]</td><td>负责此事的联系人</td></tr>
+<tr><td>电话</td><td>[联系人电话]</td><td>手机号码</td></tr>
+<tr><td>E-mail</td><td>[联系人邮箱]</td><td>常用邮箱</td></tr>
+<tr><td>传真</td><td>无</td><td>如无则填无</td></tr>
+<tr><td>手机号码</td><td>[联系人手机号]</td><td>务必准确</td></tr>
+</tbody>
+</table>
+
+<h2>三、费用说明</h2>
+
+<table>
+<thead>
+<tr><th>费用项目</th><th>金额（元）</th><th>说明</th></tr>
+</thead>
+<tbody>
+<tr><td>官费</td><td>270</td><td>中国版权保护中心收取</td></tr>
+<tr><td>代理服务费</td><td>500-1,000</td><td>如委托代理机构办理</td></tr>
+<tr><td>加急服务费</td><td>视加急程度</td><td>可选，7日/15日加急</td></tr>
+<tr><td><strong>合计</strong></td><td><strong>约770-1,270</strong></td><td>不含加急</td></tr>
+</tbody>
+</table>
+
+<div class="key-box">
+<div class="key-box-title">登记成功后的权益</div>
+<p>软件著作权登记证书是软件知识产权的法律凭证，具有以下用途：</p>
+<p>1. <strong>维权依据</strong>：在软件侵权纠纷中作为权属证明的关键证据</p>
+<p>2. <strong>上架资质</strong>：应用商店（App Store、应用宝等）上架时通常要求提供</p>
+<p>3. <strong>税收优惠</strong>：软件产品增值税即征即退政策的必备条件</p>
+<p>4. <strong>无形资产</strong>：计入企业无形资产，用于融资、评估和交易</p>
+<p>5. <strong>高新认定</strong>：高新技术企业认定中的知识产权指标</p>
+</div>
+
+<div class="signature-area">
+<p>本文档由 [申请人/代理机构] 编制</p>
+<p>编制日期：2026年05月15日</p>
+<p>文档密级：商业机密</p>
+</div>
+
+</div>
+
+</body>
+</html>
